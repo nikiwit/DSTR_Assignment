@@ -28,6 +28,6 @@ Data Structures assignment — Task 1.
 
 | File | Description |
 | ---- | ----------- |
-| `datasets/dataset1-cityA.csv` | City A traffic/event data |
-| `datasets/dataset2-cityB.csv` | City B traffic/event data |
-| `datasets/dataset3-cityC.csv` | City C traffic/event data |
+| `datasets/dataset1_city_a.csv` | City A traffic/event data |
+| `datasets/dataset2_city_b.csv` | City B traffic/event data |
+| `datasets/dataset3_city_c.csv` | City C traffic/event data |
