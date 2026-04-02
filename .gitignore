@@ -37,5 +37,9 @@
 *.out
 *.app
 
+# compiled build outputs
+array
+linked_list
+
 # debug information files
 *.dwo

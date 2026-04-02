@@ -8,11 +8,11 @@ Comparative analysis of arrays and singly linked lists for sorting and searching
 
 ```text
 /
-├── documents/       # Assignment briefs and marking schemes
-├── datasets/        # Input CSV datasets (City A, B, C)
+├── documents/          # Assignment briefs and marking schemes
+├── datasets/           # Input CSV datasets (City A, B, C)
 └── src/
-    ├── array/       # Array-based program
-    └── linked_list/ # Linked list-based program
+    ├── array.cpp       # Array-based program
+    └── linked_list.cpp # Linked list-based program
 ```
 
 ## Task Distribution
