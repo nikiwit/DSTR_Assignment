@@ -1,0 +1,52 @@
+#include "linked_list.hpp"
+
+#include <iostream>  // cout, cerr
+
+using namespace std;
+
+// ─── main ─────────────────────────────────────────────────────────────────────
+
+int main() {
+    LinkedList residents;
+    int total = load_all_datasets_to_list(residents);
+
+    if (total <= 0) {
+        cerr << "error: no records loaded. check dataset file paths." << endl;
+        residents.clear();
+        return 1;
+    }
+
+    /**
+     * --- VIONNA ---
+     * call age group categorization and carbon emission analysis here.
+     * use: residents.head to traverse, residents.size for total count
+     */
+
+    /**
+     * --- MARIIA ---
+     * call sorting and searching experiments here.
+     * use: residents.head to traverse, residents.size for total count
+     *
+     * experiment guide (the "science experiment" approach):
+     *
+     * 1. hypothesis — before each test, print what you expect to happen and why.
+     *    e.g. "we expect merge sort O(n log n) to be faster than insertion sort O(n^2)"
+     *
+     * 2. lab data — use Timer to measure execution time in ms.
+     *    Timer t;
+     *    t.start();
+     *    // ... run the sort or search ...
+     *    cout << "time: " << t.get_elapsed_ms() << " ms" << endl;
+     *
+     * 3. justification — after each test, explain the result using Big O.
+     *    if the result surprises you, explain why.
+     *
+     * design your own tests. vary these:
+     *   - algorithm (e.g. insertion sort vs merge sort)
+     *   - data state (sorted, random, reverse)
+     *   - search target (existing vs non-existing value)
+     */
+
+    residents.clear(); // free all heap memory before exit
+    return 0;
+}

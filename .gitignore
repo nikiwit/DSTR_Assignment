@@ -38,8 +38,8 @@
 *.app
 
 # compiled build outputs
-array
-linked_list
+src/array
+src/linked_list
 
 # debug information files
 *.dwo
