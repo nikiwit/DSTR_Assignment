@@ -15,12 +15,24 @@ int main() {
         return 1;
     }
 
-    /**
-     * --- AYESHA ---
-     * call age group categorization and carbon emission analysis here.
-     * use: residents[], total
-     */
+    
+    // --- AYESHA ---
+    // task 4: age group categorization
+    display_age_group_categorization(residents, total);
 
+    // task 5a: total carbon emission per dataset
+    display_total_emission_per_dataset(residents, total);
+
+    // task 5b: carbon emission per mode of transport
+    display_emission_per_transport_mode(residents, total);
+
+    // task 5c: compare emissions across datasets and age groups
+    display_emission_comparison_by_dataset_and_age_group(residents, total);
+
+    // extra detailed table: shows breakdown of carbon emissions by transport mode within each age group
+    display_transport_breakdown_by_age_group(residents, total);
+
+    
     /**
      * --- WINGY ---
      * call sorting and searching experiments here.

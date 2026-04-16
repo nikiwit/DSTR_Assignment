@@ -40,8 +40,15 @@ int load_all_datasets(Resident arr[]);
 
 /**
  * --- AYESHA ---
- * declare age group categorization and carbon emission analysis prototypes here.
+  * age group categorization + carbon emission analysis
  */
+int get_age_group_index(int age);
+void display_age_group_categorization(Resident arr[], int n);
+
+void display_total_emission_per_dataset(Resident arr[], int n);
+void display_emission_per_transport_mode(Resident arr[], int n);
+void display_emission_comparison_by_dataset_and_age_group(Resident arr[], int n);
+void display_transport_breakdown_by_age_group(Resident arr[], int n);
 
 // closes the #ifndef guard — everything above is skipped if this header was already included
 #endif
