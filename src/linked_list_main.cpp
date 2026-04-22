@@ -22,6 +22,15 @@ int main() {
      * use: residents.head to traverse, residents.size for total count
      */
 
+    // task 4
+    display_age_group_categorization(residents);
+
+    // task 5
+    display_total_emission_per_dataset(residents);
+    display_emission_per_transport_mode(residents);
+    display_emission_comparison_by_dataset_and_age_group(residents);
+    display_transport_breakdown_by_age_group(residents);
+
     /**
      * --- MARIIA ---
      * call sorting and searching experiments here.

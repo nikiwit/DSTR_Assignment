@@ -25,6 +25,9 @@ struct LinkedList {
     // initializes an empty list
     LinkedList() : head(nullptr), tail(nullptr), size(0) {}
 
+    // method to allow external functions to access head safely
+    Node* getHead() const { return head; }
+
     // appends a new node at the tail in O(1)
     void insert(const Resident& r) {
         Node* new_node  = new Node;
@@ -89,6 +92,17 @@ int load_all_datasets_to_list(LinkedList& list);
  * --- VIONNA ---
  * declare age group categorization and carbon emission analysis prototypes here.
  */
+
+// function prototypes
+int load_csv_to_list(const char* filename, LinkedList& list, char city_label);
+int load_all_datasets_to_list(LinkedList& list);
+
+// analysis functions
+void display_age_group_categorization(const LinkedList& list);
+void display_total_emission_per_dataset(const LinkedList& list);
+void display_emission_per_transport_mode(const LinkedList& list);
+void display_emission_comparison_by_dataset_and_age_group(const LinkedList& list);
+void display_transport_breakdown_by_age_group(const LinkedList& list);
 
 // closes the #ifndef guard — everything above is skipped if this header was already included
 #endif
