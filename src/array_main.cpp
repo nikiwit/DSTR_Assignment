@@ -15,42 +15,11 @@ int main() {
         return 1;
     }
 
-    cout << "Total records loaded: " << total << endl;
-
-    
-    // --- AYESHA ---
-    // task 4: age group categorization
-    display_age_group_categorization(residents, total);
-
-    // task 5a: total carbon emission per dataset
-    display_total_emission_per_dataset(residents, total);
-
-    // task 5b: carbon emission per mode of transport
-    display_emission_per_transport_mode(residents, total);
-
-    // task 5c: compare emissions across datasets and age groups
-    display_emission_comparison_by_dataset_and_age_group(residents, total);
-
-    // extra detailed table: shows breakdown of carbon emissions by transport mode within each age group
-    display_transport_breakdown_by_age_group(residents, total);
-
-
-    sort_by_monthly_emission_merge_sort(residents, total);
-    sort_by_age_merge_sort(residents, total);
-    sort_by_transport_mode_merge_sort(residents, total);
-    sort_by_monthly_emission_quick_sort(residents, total);
-    sort_by_age_quick_sort(residents, total);
-    sort_by_transport_mode_quick_sort(residents, total);
-    searching_experiment_introduction();
-    search_experiment_age_group_sorted(residents, total, 20, 29);
-    search_experiment_transport_mode_sorted(residents, total, "car");
-    search_experiment_distance_threshold_sorted(residents, total, 10.0);
-    search_experiment_age_group_unsorted(residents, total, 20, 29);
-    search_experiment_transport_mode_unsorted(residents, total, "car");
-    search_experiment_distance_threshold_unsorted(residents, total, 10.0);
-
-    display_sorting_comparison_table();
-    display_searching_comparison_table();
+    /**
+     * --- AYESHA ---
+     * call age group categorization and carbon emission analysis here.
+     * use: residents[], total
+     */
 
     /**
      * --- WINGY ---

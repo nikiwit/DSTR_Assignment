@@ -40,33 +40,8 @@ int load_all_datasets(Resident arr[]);
 
 /**
  * --- AYESHA ---
-  * age group categorization + carbon emission analysis
+ * declare age group categorization and carbon emission analysis prototypes here.
  */
-int get_age_group_index(int age);
-void display_age_group_categorization(Resident arr[], int n);
-
-void display_total_emission_per_dataset(Resident arr[], int n);
-void display_emission_per_transport_mode(Resident arr[], int n);
-void display_emission_comparison_by_dataset_and_age_group(Resident arr[], int n);
-void display_transport_breakdown_by_age_group(Resident arr[], int n);
-
-void sort_by_monthly_emission_quick_sort(Resident arr[], int n);
-void sort_by_age_quick_sort(Resident arr[], int n);
-void sort_by_transport_mode_quick_sort(Resident arr[], int n);
-void sort_by_monthly_emission_merge_sort(Resident arr[], int n);
-void sort_by_age_merge_sort(Resident arr[], int n);
-void sort_by_transport_mode_merge_sort(Resident arr[], int n);
-void searching_experiment_introduction();
-void search_experiment_age_group_sorted(Resident arr[], int n, int min_age, int max_age);
-void search_experiment_transport_mode_sorted(Resident arr[], int n, const char* transport_mode);
-void search_experiment_distance_threshold_sorted(Resident arr[], int n, double distance_threshold);
-void search_experiment_age_group_unsorted(Resident arr[], int n, int min_age, int max_age);
-void search_experiment_transport_mode_unsorted(Resident arr[], int n, const char* transport_mode);
-void search_experiment_distance_threshold_unsorted(Resident arr[], int n, double distance_threshold);
-
-// ─── complexity comparison tables ─────────────────────────────────────────────
-void display_sorting_comparison_table();
-void display_searching_comparison_table();
 
 // closes the #ifndef guard — everything above is skipped if this header was already included
 #endif

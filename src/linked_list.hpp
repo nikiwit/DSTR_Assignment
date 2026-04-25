@@ -25,9 +25,6 @@ struct LinkedList {
     // initializes an empty list
     LinkedList() : head(nullptr), tail(nullptr), size(0) {}
 
-    // method to allow external functions to access head safely
-    Node* getHead() const { return head; }
-
     // appends a new node at the tail in O(1)
     void insert(const Resident& r) {
         Node* new_node  = new Node;
@@ -70,10 +67,21 @@ int load_csv_to_list(const char* filename, LinkedList& list, char city_label);
 // loads all three datasets into the linked list in order: A → B → C
 int load_all_datasets_to_list(LinkedList& list);
 
+// ─── sorting ──────────────────────────────────────────────────────────────────
 
-// ─── complexity comparison tables ─────────────────────────────────────────────
-void display_sorting_comparison_table();
-void display_searching_comparison_table();
+/**
+ * --- MARIIA ---
+ * declare sorting function prototypes here.
+ * e.g. void insertion_sort_by_emission(LinkedList& list);
+ */
+
+// ─── searching ────────────────────────────────────────────────────────────────
+
+/**
+ * --- MARIIA ---
+ * declare searching function prototypes here.
+ * e.g. Node* linear_search_by_age(LinkedList& list, int target_age);
+ */
 
 // ─── analysis ─────────────────────────────────────────────────────────────────
 
@@ -81,38 +89,6 @@ void display_searching_comparison_table();
  * --- VIONNA ---
  * declare age group categorization and carbon emission analysis prototypes here.
  */
-
-// function prototypes
-int load_csv_to_list(const char* filename, LinkedList& list, char city_label);
-int load_all_datasets_to_list(LinkedList& list);
-
-// analysis functions
-void display_age_group_categorization(const LinkedList& list);
-void display_total_emission_per_dataset(const LinkedList& list);
-void display_emission_per_transport_mode(const LinkedList& list);
-void display_emission_comparison_by_dataset_and_age_group(const LinkedList& list);
-void display_transport_breakdown_by_age_group(const LinkedList& list);
-
-
-// ─── sorting ──────────────────────────────────────────────────────────────────
-
-void sort_by_monthly_emission_merge_sort(LinkedList& list);
-void sort_by_age_merge_sort(LinkedList& list);
-void sort_by_transport_mode_merge_sort(LinkedList& list);
-void sort_by_monthly_emission_quick_sort(LinkedList& list);
-void sort_by_age_quick_sort(LinkedList& list);
-void sort_by_transport_mode_quick_sort(LinkedList& list);
-
-// ─── searching ────────────────────────────────────────────────────────────────
-
-void searching_experiment_introduction();
-void search_experiment_age_group_sorted(const LinkedList& list, int min_age, int max_age);
-void search_experiment_transport_mode_sorted(const LinkedList& list, const char* transport_mode);
-void search_experiment_distance_threshold_sorted(const LinkedList& list, double distance_threshold);
-void search_experiment_age_group_unsorted(const LinkedList& list, int min_age, int max_age);
-void search_experiment_transport_mode_unsorted(const LinkedList& list, const char* transport_mode);
-void search_experiment_distance_threshold_unsorted(const LinkedList& list, double distance_threshold);
-
 
 // closes the #ifndef guard — everything above is skipped if this header was already included
 #endif
