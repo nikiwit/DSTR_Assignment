@@ -54,7 +54,7 @@ void sort_by_monthly_emission_quick_sort(Resident arr[], int n);
 void sort_by_age_quick_sort(Resident arr[], int n);
 void sort_by_transport_mode_quick_sort(Resident arr[], int n);
 void sort_by_monthly_emission_merge_sort(Resident arr[], int n);
-void sort_by_age_merge_sort(Resident arr[], int n);
+void sort_by_age_bubble_sort(Resident arr[], int n);
 void sort_by_transport_mode_merge_sort(Resident arr[], int n);
 void searching_experiment_introduction();
 void search_experiment_age_group_sorted(Resident arr[], int n, int min_age, int max_age);
