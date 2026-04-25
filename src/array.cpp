@@ -284,6 +284,8 @@ void sort_by_monthly_emission_merge_sort(Resident arr[], int n) {
     Timer t;
     t.start();
 
+    Resident copy[MAX_RECORDS];
+    copy_records(copy, arr, n);
     Resident tmp[MAX_RECORDS];
     for (int width = 1; width < n; width *= 2) {
         for (int lo = 0; lo < n; lo += 2 * width) {
@@ -293,16 +295,16 @@ void sort_by_monthly_emission_merge_sort(Resident arr[], int n) {
             int i = lo, j = mid, k = lo;
 
             while (i < mid && j < hi) {
-                if (arr[i].monthly_emission <= arr[j].monthly_emission)
-                    tmp[k++] = arr[i++];
+                if (copy[i].monthly_emission <= copy[j].monthly_emission)
+                    tmp[k++] = copy[i++];
                 else
-                    tmp[k++] = arr[j++];
+                    tmp[k++] = copy[j++];
             }
-            while (i < mid) tmp[k++] = arr[i++];
-            while (j < hi)  tmp[k++] = arr[j++];
+            while (i < mid) tmp[k++] = copy[i++];
+            while (j < hi)  tmp[k++] = copy[j++];
 
             for (int x = lo; x < hi; x++) {
-                arr[x] = tmp[x];
+                copy[x] = tmp[x];
             }
         }
     }
@@ -310,14 +312,14 @@ void sort_by_monthly_emission_merge_sort(Resident arr[], int n) {
     double elapsed = t.get_elapsed_ms();
     double mem_after = get_memory_usage_mb();
 
-    display_first_records(arr, n);
+    display_first_records(copy, n);
     cout << "  Measured sort time: " << fixed << setprecision(4) << elapsed << " ms  (n=" << n << ")" << endl;
     cout << "  Memory used (measured): " << fixed << setprecision(4) << (mem_after - mem_before) << " MB" << endl;
     cout << "  Memory used (estimated): " << fixed << setprecision(4)
          << (sizeof(tmp) / (1024.0 * 1024.0)) << " MB" << endl;
 }
 
-void sort_by_age_merge_sort(Resident arr[], int n) {
+void sort_by_age_bubble_sort(Resident arr[], int n) {
     cout << "\n--------------------------------------------------------------" << endl;
     cout << "  SORT: Age  [Bubble Sort / Ascending]" << endl;
     cout << "  Theoretical: O(n^2) time  |  O(1) space" << endl;
@@ -327,10 +329,12 @@ void sort_by_age_merge_sort(Resident arr[], int n) {
     Timer t;
     t.start();
 
+    Resident copy[MAX_RECORDS];
+    copy_records(copy, arr, n);
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - 1 - i; j++) {
-            if (arr[j].age > arr[j + 1].age) {
-                swap_resident(arr[j], arr[j + 1]);
+            if (copy[j].age > copy[j + 1].age) {
+                swap_resident(copy[j], copy[j + 1]);
             }
         }
     }
@@ -338,7 +342,7 @@ void sort_by_age_merge_sort(Resident arr[], int n) {
     double elapsed = t.get_elapsed_ms();
     double mem_after = get_memory_usage_mb();
 
-    display_first_records(arr, n);
+    display_first_records(copy, n);
     cout << "  Measured sort time: " << fixed << setprecision(4) << elapsed << " ms  (n=" << n << ")" << endl;
     cout << "  Memory used (measured): " << fixed << setprecision(4) << (mem_after - mem_before) << " MB" << endl;
     cout << "  Memory used (estimated): O(1)" << endl;
@@ -354,6 +358,8 @@ void sort_by_transport_mode_merge_sort(Resident arr[], int n) {
     Timer t;
     t.start();
 
+    Resident copy[MAX_RECORDS];
+    copy_records(copy, arr, n);
     Resident tmp[MAX_RECORDS];
     for (int width = 1; width < n; width *= 2) {
         for (int lo = 0; lo < n; lo += 2 * width) {
@@ -363,16 +369,16 @@ void sort_by_transport_mode_merge_sort(Resident arr[], int n) {
             int i = lo, j = mid, k = lo;
 
             while (i < mid && j < hi) {
-                if (strcmp(arr[i].transport, arr[j].transport) <= 0)
-                    tmp[k++] = arr[i++];
+                if (strcmp(copy[i].transport, copy[j].transport) <= 0)
+                    tmp[k++] = copy[i++];
                 else
-                    tmp[k++] = arr[j++];
+                    tmp[k++] = copy[j++];
             }
-            while (i < mid) tmp[k++] = arr[i++];
-            while (j < hi)  tmp[k++] = arr[j++];
+            while (i < mid) tmp[k++] = copy[i++];
+            while (j < hi)  tmp[k++] = copy[j++];
 
             for (int x = lo; x < hi; x++) {
-                arr[x] = tmp[x];
+                copy[x] = tmp[x];
             }
         }
     }
@@ -380,7 +386,7 @@ void sort_by_transport_mode_merge_sort(Resident arr[], int n) {
     double elapsed = t.get_elapsed_ms();
     double mem_after = get_memory_usage_mb();
 
-    display_first_records(arr, n);
+    display_first_records(copy, n);
     cout << "  Measured sort time: " << fixed << setprecision(4) << elapsed << " ms  (n=" << n << ")" << endl;
     cout << "  Memory used (measured): " << fixed << setprecision(4) << (mem_after - mem_before) << " MB" << endl;
     cout << "  Memory used (estimated): " << fixed << setprecision(4)
@@ -397,12 +403,14 @@ void sort_by_monthly_emission_quick_sort(Resident arr[], int n) {
     Timer t;
     t.start();
 
-    quick_sort_by_emission(arr, 0, n - 1);
+    Resident copy[MAX_RECORDS];
+    copy_records(copy, arr, n);
+    quick_sort_by_emission(copy, 0, n - 1);
 
     double elapsed = t.get_elapsed_ms();
     double mem_after = get_memory_usage_mb();
 
-    display_first_records(arr, n);
+    display_first_records(copy, n);
     cout << "  Measured sort time: " << fixed << setprecision(4) << elapsed << " ms  (n=" << n << ")" << endl;
     cout << "  Memory used (measured): " << fixed << setprecision(4) << (mem_after - mem_before) << " MB" << endl;
     cout << "  Memory used (estimated): O(log n) avg stack space" << endl;
@@ -415,14 +423,16 @@ void sort_by_age_quick_sort(Resident arr[], int n) {
 
     double mem_before = get_memory_usage_mb();
 
+    Resident copy[MAX_RECORDS];
+    copy_records(copy, arr, n);
     Timer t;
     t.start();
-    quick_sort_by_age(arr, 0, n - 1);
+    quick_sort_by_age(copy, 0, n - 1);
     double elapsed = t.get_elapsed_ms();
 
     double mem_after = get_memory_usage_mb();
 
-    display_first_records(arr, n);
+    display_first_records(copy, n);
     cout << "  Measured sort time: " << fixed << setprecision(4) << elapsed << " ms  (n=" << n << ")" << endl;
     cout << "  Memory used (measured): " << fixed << setprecision(4) << (mem_after - mem_before) << " MB" << endl;
     cout << "  Memory used (estimated): O(log n) avg stack space" << endl;
@@ -436,14 +446,16 @@ void sort_by_transport_mode_quick_sort(Resident arr[], int n) {
 
     double mem_before = get_memory_usage_mb();
 
+    Resident copy[MAX_RECORDS];
+    copy_records(copy, arr, n);
     Timer t;
     t.start();
-    quick_sort_by_transport(arr, 0, n - 1);
+    quick_sort_by_transport(copy, 0, n - 1);
     double elapsed = t.get_elapsed_ms();
 
     double mem_after = get_memory_usage_mb();
 
-    display_first_records(arr, n);
+    display_first_records(copy, n);
     cout << "  Measured sort time: " << fixed << setprecision(4) << elapsed << " ms  (n=" << n << ")" << endl;
     cout << "  Memory used (measured): " << fixed << setprecision(4) << (mem_after - mem_before) << " MB" << endl;
     cout << "  Memory used (estimated): O(log n) avg stack space" << endl;

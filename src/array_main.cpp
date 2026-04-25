@@ -36,7 +36,7 @@ int main() {
 
 
     sort_by_monthly_emission_merge_sort(residents, total);
-    sort_by_age_merge_sort(residents, total);
+    sort_by_age_bubble_sort(residents, total);
     sort_by_transport_mode_merge_sort(residents, total);
     sort_by_monthly_emission_quick_sort(residents, total);
     sort_by_age_quick_sort(residents, total);

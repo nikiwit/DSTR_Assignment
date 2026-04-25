@@ -296,7 +296,6 @@ void display_emission_comparison_by_dataset_and_age_group(const LinkedList& list
 // task 5d
 void display_transport_breakdown_by_age_group(const LinkedList& list) {
 
-    char cities[] = {'A','B','C'};
     const char* labels[] = {"City A","City B","City C"};
 
     int counts[3][5][NUM_TRANSPORTS] = {0};
