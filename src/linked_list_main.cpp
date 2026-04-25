@@ -56,6 +56,24 @@ int main() {
      *   - search target (existing vs non-existing value)
      */
 
+    sort_by_monthly_emission_merge_sort(residents);
+    sort_by_age_merge_sort(residents);
+    sort_by_transport_mode_merge_sort(residents);
+    sort_by_monthly_emission_quick_sort(residents);
+    sort_by_age_quick_sort(residents);
+    sort_by_transport_mode_quick_sort(residents);
+
+    searching_experiment_introduction();
+    search_experiment_age_group_sorted(residents, 20, 29);
+    search_experiment_transport_mode_sorted(residents, "car");
+    search_experiment_distance_threshold_sorted(residents, 10.0);
+    search_experiment_age_group_unsorted(residents, 20, 29);
+    search_experiment_transport_mode_unsorted(residents, "car");
+    search_experiment_distance_threshold_unsorted(residents, 10.0);
+
+    display_sorting_comparison_table();
+    display_searching_comparison_table();
+
     residents.clear(); // free all heap memory before exit
     return 0;
 }
