@@ -40,6 +40,30 @@
 # compiled build outputs
 src/array
 src/linked_list
+task2/src/warehouse
+task2/warehouse
 
 # debug information files
 *.dwo
+
+# macOS system files
+**/.DS_Store
+
+# large media files
+videos/
+
+# binary / office documents
+*.pdf
+*.docx
+!documents/assignment_task_2_question.pdf
+
+# generated output files
+*_output.txt
+
+# IDE temp files
+tempCodeRunnerFile.py
+
+# task 1 scratch work in documents/
+documents/diagram_*.py
+documents/theoretical_explanation_draft.md
+documents/video_outline.txt

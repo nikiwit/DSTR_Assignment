@@ -79,3 +79,36 @@ Run from the `src/` directory so dataset paths resolve correctly.
 5. Commit your changes with clear messages.
 6. Open a pull request into `development` when ready for review.
 7. `main` is updated from `development` once a milestone is stable.
+
+---
+
+## Task 2 — Warehouse Robot Navigation System
+
+CT077 Lab Evaluation Work #2 | 30 Marks | Single unified C++ program.
+
+### System Overview
+
+Autonomous robots pick items from warehouse shelves and deliver them to packing stations. The system uses **Stack, Queue, Circular Queue, and Tree** structures (all self-implemented — no STL containers).
+
+Full system flow: receive order → assign robot → navigate to item → (locate item) → return via reverse path.
+
+### Repository Structure (Task 2)
+
+### Module–Member Mapping
+
+| Member | Module | Data Structure |
+| ------ | ------ | -------------- |
+| Nik | Order Management | Queue |
+| Mariia | Robot Assignment | Circular Queue |
+| Ayesha | Robot Navigation & Path Tracking | Stack |
+| Wingy | Item Search & Management (optional) | BST / Tree |
+| Vionna | Warehouse Layout & Navigation (optional) | Tree |
+
+### How to Compile (Task 2)
+
+```bash
+g++ task2/src/main.cpp task2/src/order_queue.cpp -o task2/src/warehouse
+
+# Run
+./task2/src/warehouse
+```
