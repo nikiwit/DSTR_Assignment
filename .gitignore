@@ -63,6 +63,9 @@ videos/
 # IDE temp files
 tempCodeRunnerFile.py
 
+# local presentation notes
+task2/notes.md
+
 # task 1 scratch work in documents/
 documents/diagram_*.py
 documents/theoretical_explanation_draft.md
