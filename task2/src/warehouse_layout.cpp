@@ -109,6 +109,11 @@ void displayLayout()
     printTree(warehouseRoot, 0);
 }
 
+bool locationExists(string targetLocation)
+{
+    return searchLocation(warehouseRoot, targetLocation) != NULL;
+}
+
 // find a route to the target location
 bool findPathLogic(LayoutNode *current, string target, string path[], int &stepCount)
 {
@@ -138,7 +143,7 @@ bool findPathLogic(LayoutNode *current, string target, string path[], int &stepC
 }
 
 // send route steps to robot navigation
-void planRoute(string targetLocation)
+bool planRoute(string targetLocation)
 {
     string path[20]; // store route steps
     int steps = 0;
@@ -153,10 +158,12 @@ void planRoute(string targetLocation)
             string movementInstruction = "Enter " + path[i];
             pushStep(movementInstruction); // calling Task 3 function
         }
+        return true;
     }
     else
     {
         cout << "\nLocation '" << targetLocation << "' could not be found." << endl;
+        return false;
     }
 }
 

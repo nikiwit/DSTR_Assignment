@@ -33,10 +33,10 @@ void addRobot(string name) {
     cout << "Robot [" << robots[robotCount - 1].robotID << "] " << name << " added." << endl;
 }
 
-void assignNextTask(string taskDesc) {
+int assignNextTask(string taskDesc) {
     if (isRobotsEmpty()) {
         cout << "No robots in the system." << endl;
-        return;
+        return -1;
     }
 
     // сheck one by one, skip robots under maintenance or busy; assign to the first available one
@@ -66,11 +66,12 @@ void assignNextTask(string taskDesc) {
                 cur->next = node;
             }
             assignCount++;
-            return;
+            return robots[idx].robotID;
         }
     }
 
     cout << "No available robots to assign the task." << endl;
+    return -1;
 }
 
 void setRobotStatus(int robotID, string newStatus) {

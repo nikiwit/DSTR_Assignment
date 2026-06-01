@@ -22,7 +22,7 @@ struct AssignmentNode {
 };
 
 void addRobot(string name);
-void assignNextTask(string taskDesc);
+int assignNextTask(string taskDesc);
 void setRobotStatus(int robotID, string newStatus);
 void displayRobots();
 void displayAssignments();

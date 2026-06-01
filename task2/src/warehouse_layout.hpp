@@ -19,7 +19,8 @@ struct LayoutNode
 void initWarehouse();
 void addLocation(string parentName, string name, string type, bool showMessage = true);
 void displayLayout();
-void planRoute(string targetLocation);
+bool locationExists(string targetLocation);
+bool planRoute(string targetLocation);
 void runLayoutDemo();
 
 #endif
