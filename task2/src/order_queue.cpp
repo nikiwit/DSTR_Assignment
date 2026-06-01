@@ -125,6 +125,11 @@ void runOrderDemo() {
 
         switch (choice) {
             case 1: {
+                // check capacity before consuming an ID, so a rejected order never leaves a gap in the numbering
+                if (isFull()) {
+                    cout << "Overflow: queue is full." << endl;
+                    break;
+                }
                 Order o;
                 o.orderID   = nextOrderID++;
                 o.completed = false;
